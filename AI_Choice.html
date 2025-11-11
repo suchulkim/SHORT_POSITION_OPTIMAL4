@@ -1,6 +1,6 @@
 
     <!DOCTYPE html>
-<html lang="ko">
+    <html lang="ko">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,7 +63,6 @@
             .nav-link.dashboard { background: linear-gradient(135deg, #667eea, #764ba2); }
             .nav-link.market { background: linear-gradient(135deg, #f093fb, #f5576c); }
             .nav-link.pattern { background: linear-gradient(135deg, #4facfe, #00f2fe); }
-            .nav-link.trading { background: linear-gradient(135deg, #43e97b, #38f9d7); }
             .nav-link:hover {
                 transform: translateY(-3px);
                 box-shadow: 0 8px 25px rgba(0,0,0,0.3);
@@ -281,33 +280,65 @@
     <body>
         <div class="container">
             <div class="header">
-                <h1>🧠 패턴 최적화 AI 숏포지션 종목 분석</h1>
-                <div class="subtitle">현재가<90MA, 하락율 5~20% 양봉/음봉/음봉, 음봉/음봉/음봉 전문 • +55% 익절 / -18% 손절 시스템 • 2025-11-11 21:05:34</div>
+                <h1>🧠 AI 패턴 최적화 숏포지션 분석</h1>
+                <div class="subtitle"> 현재가<90MA 하락추세, 양봉-음봉-음봉 / 음봉-음봉-음봉 패턴 전문 • +55% 익절 / -18% 손절 시스템 • 2025-11-11 21:36:14</div>
             </div>
             <div class="nav-menu">
                 <div class="nav-links">
                     <a href="dashboard.html" class="nav-link dashboard">📊 코인선물 종합 지수</a>
                     <a href="BinanceMarketOverview.html" class="nav-link market">🌍 코인선물 시장 현황</a>
                     <a href="CandlePatternAnalysis.html" class="nav-link pattern">📈 코인선물 숏포지션 패턴 검출 현황</a>
-                    <a href="Trading_result.html" class="nav-link trading">💰 코인선물 매매 결과 분석</a>
                 </div>
             </div>
             
-            <div class="analysis-summary">
-                <h2 class="section-title">📈 분석 대상 종목</h2>
-                <div class="warning-box" style="margin-top: 1.5rem;">
-                    <div class="warning-title">⚠️ 분석 가능한 종목이 없습니다</div>
-                    <div class="warning-text">현재 분석 조건을 만족하는 종목이 없습니다.</div>
+        <div class="analysis-summary">
+            <h2 class="section-title">📈 AI 패턴 최적화 최고점수 종목</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">DASHUSDT</div>
+                    <div class="stat-label">종목명</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">45</div>
+                    <div class="stat-label">최종 점수</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">45.0%</div>
+                    <div class="stat-label">신뢰도</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">45.1%</div>
+                    <div class="stat-label">추가하락 확률</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">$66.200000</div>
+                    <div class="stat-label">현재가</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value risk-badge risk-high">HIGH</div>
+                    <div class="stat-label">리스크</div>
                 </div>
             </div>
-            
+            <div class="tracking-info">
+                <div class="tracking-info-title">🎯 패턴 최적화 AI 특징</div>
+                <div class="tracking-info-text">
+                    • 10개 4시간봉(7개 추세 + 3개 패턴) 상승후 조정<br>
+                    • 양봉-음봉-음봉 / 음봉-음봉-음봉 패턴에만 특화된 학습<br>
+                    • 18개 특성 (기존 15개 + 패턴 강도/가속도/타입)<br>
+                    • 추가 하락에 최적화된 레이블링<br>
+                    • -18% 손절 시스템 적용
+                    • 55% 익절 시스템 적용
+                </div>
+            </div>
+        </div>
+        
             
             
         <div class="chart-section">
             <div class="chart-header">
-                <h2 class="section-title">📈 BTCUSDT 실시간 차트 (4시간봉)</h2>
+                <h2 class="section-title">📈 DASHUSDT 실시간 차트 (4시간봉)</h2>
                 <div class="chart-controls">
-                    <a href="https://www.binance.com/en/futures/BTC_USDT" target="_blank" class="chart-btn binance-btn">🏦 바이낸스에서 보기</a>
+                    <a href="https://www.binance.com/en/futures/DASH_USDT" target="_blank" class="chart-btn binance-btn">🏦 바이낸스에서 보기</a>
                 </div>
             </div>
             <div class="chart-container">
@@ -316,7 +347,7 @@
         </div>
         <script>
             new TradingView.widget({
-                "width": "100%", "height": 800, "symbol": "BINANCE:BTCUSDT",
+                "width": "100%", "height": 800, "symbol": "BINANCE:DASHUSDT",
                 "interval": "240", "timezone": "Asia/Seoul", "theme": "dark",
                 "style": "1", "locale": "kr", "toolbar_bg": "#000000",
                 "enable_publishing": false, "hide_top_toolbar": false,
@@ -334,7 +365,7 @@
                 <div class="tracking-info-text">
                     <strong>승률:</strong> 0.0% (0/0) | 
                     <strong>누적 수익률:</strong> <span class="negative">+0.00%</span> | 
-                    <strong>총 추적 건수:</strong> 0건<br>
+                    <strong>총 추적 건수:</strong> 1건<br>
                     <strong>🎉 익절 발동:</strong> <span class="positive">0건 (0.0%)</span> | 
                     <strong>🛑 손절 발동:</strong> <span class="negative">0건 (0.0%)</span>
                 </div>
@@ -350,7 +381,17 @@
                             <th>24h 결과</th><th>최고/최저</th><th>상태</th>
                         </tr>
                     </thead>
-                    <tbody><tr><td colspan='7' style='text-align: center; padding: 2rem;'>히스토리 데이터가 없습니다.</td></tr></tbody>
+                    <tbody>
+                <tr style="font-size: 1.2rem;">
+                    <td style="font-weight: bold;">2025-11-11 (화) 21:36</td>
+                    <td><a href="https://www.binance.com/en/futures/DASH_USDT" target="_blank" class="symbol-link">DASHUSDT</a></td>
+                    <td style="font-weight: bold;">45</td>
+                    <td style="font-weight: bold;">45.1%</td>
+                    <td><div class="tracking-result tracking-pending">대기중</div></td>
+                    <td><div class="return-stats">-</div></td>
+                    <td><span class="risk-badge risk-medium">대기</span></td>
+                </tr>
+            </tbody>
                 </table>
             </div>
         </div>
